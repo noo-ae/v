@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,16 +9,19 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Charmonman:wght@400;700&family=Mali:wght@400;600&family=Prompt:wght@300;400;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
 <body>
 
     <!-- Section 1: Hero / Intro -->
     <header id="hero">
         <div class="hero-content">
-            <h1 class="main-title">Happy Valentine's Day</h1>
-            <p class="subtitle">To the most special person in my life...</p>
+            <h1 class="main-title">สุขสันต์วันวาเลนไทน์</h1>
+            <p class="subtitle">แด่... คนพิเศษที่สุดในใจของฉัน ❤️</p>
             <div class="scroll-down">
                 <i class="fas fa-chevron-down"></i>
             </div>
@@ -27,33 +31,33 @@
 
     <!-- Section 2: Our Timeline -->
     <section id="timeline">
-        <h2>Our Journey Together</h2>
+        <h2>เรื่องราวของเรา</h2>
         <div class="timeline-container">
-            
+
             <!-- Timeline Item 1 -->
             <div class="timeline-item left">
                 <div class="content">
-                    <h3>The Day We Met</h3>
-                    <p class="date">February 14, 2023</p>
-                    <p>Do you remember the first time we saw each other? It was the beginning of my favorite story.</p>
+                    <h3>วันแรกที่เจอกัน</h3>
+                    <p class="date">14 กุมภาพันธ์ 2023</p>
+                    <p>จำวันแรกที่เราเจอกันได้ไหม? วันนั้นคือจุดเริ่มต้นของเรื่องราวที่น่ารักที่สุดเลยนะ</p>
                 </div>
             </div>
 
             <!-- Timeline Item 2 -->
             <div class="timeline-item right">
                 <div class="content">
-                    <h3>First Date</h3>
-                    <p class="date">March 1, 2023</p>
-                    <p>Our first date was magical. I knew right then that you were someone special.</p>
+                    <h3>เดตแรกของเรา</h3>
+                    <p class="date">1 มีนาคม 2023</p>
+                    <p>เดตแรกวันนั้นเขินมากเลย แต่ก็มีความสุขมาก ๆ รู้เลยว่าคนนี้แหละใช่!</p>
                 </div>
             </div>
 
             <!-- Timeline Item 3 -->
             <div class="timeline-item left">
                 <div class="content">
-                    <h3>First Trip</h3>
-                    <p class="date">December 25, 2023</p>
-                    <p>Traveling with you is my favorite adventure. Looking forward to many more.</p>
+                    <h3>ทริปแรกด้วยกัน</h3>
+                    <p class="date">25 ธันวาคม 2023</p>
+                    <p>การได้ไปเที่ยวกับเธอคือการผจญภัยที่สนุกที่สุด อยากไปเที่ยวด้วยกันอีกเยอะ ๆ เลยนะ</p>
                 </div>
             </div>
 
@@ -62,46 +66,46 @@
 
     <!-- Section 3: Time Counter -->
     <section id="counter">
-        <h2>We have been in love for</h2>
+        <h2>เรารักกันมานานแค่ไหนแล้วนะ?</h2>
         <div class="timer-wrapper">
             <div class="time-box">
                 <span id="days">00</span>
-                <span class="label">Days</span>
+                <span class="label">วัน</span>
             </div>
             <div class="time-box">
                 <span id="hours">00</span>
-                <span class="label">Hours</span>
+                <span class="label">ชั่วโมง</span>
             </div>
             <div class="time-box">
                 <span id="minutes">00</span>
-                <span class="label">Minutes</span>
+                <span class="label">นาที</span>
             </div>
             <div class="time-box">
                 <span id="seconds">00</span>
-                <span class="label">Seconds</span>
+                <span class="label">วินาที</span>
             </div>
         </div>
-        <p class="counter-footer">...and counting every beautiful moment.</p>
+        <p class="counter-footer">...และจะรักแบบนี้ตลอดไป ❤️</p>
     </section>
 
     <!-- Section 4: The Envelope -->
     <section id="love-letter">
-        <h2>A Special Message For You</h2>
-        <p class="instruction">(Tap the envelope to open)</p>
-        
+        <h2>มีข้อความถึงเธอ...</h2>
+        <p class="instruction">(กดที่ซองจดหมายเพื่อเปิดอ่าน)</p>
+
         <div class="envelope-wrapper" onclick="openEnvelope()">
             <div class="envelope">
                 <div class="front flap"></div>
                 <div class="front pocket"></div>
                 <div class="letter">
                     <div class="text">
-                        <h3>My Dearest,</h3>
+                        <h3>ถึง เธอคนดี,</h3>
                         <p>
-                            You are the reason I smile every day. 
-                            Thank you for being you, and for being mine.
-                            I love you more than words can say.
+                            ขอบคุณที่เป็นรอยยิ้มให้กันในทุกวันนะ
+                            ดีใจที่มีเธออยู่ข้าง ๆ
+                            รักเธอที่สุดเลยนะ
                         </p>
-                        <p class="signature">Forever Yours,<br>Me ❤️</p>
+                        <p class="signature">รักเสมอนะ,<br>เค้าเอง ❤️</p>
                     </div>
                 </div>
                 <!-- <div class="heart-seal">❤️</div> -->
@@ -110,9 +114,10 @@
     </section>
 
     <footer>
-        <p>Made with all my ❤️ for You.</p>
+        <p>ทำด้วยใจ ❤️ ให้เธอคนเดียว</p>
     </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>

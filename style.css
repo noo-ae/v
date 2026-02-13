@@ -5,14 +5,19 @@
     --bg-color: #fff0f3;
     --text-color: #590d22;
     --card-bg: #ffffff;
-    --font-heading: 'Dancing Script', cursive;
-    --font-body: 'Nunito', sans-serif;
+    /* Thai Fonts Updated - Cute Style */
+    --font-heading: 'Mali', cursive;
+    /* Cute Handwritten Font */
+    --font-body: 'Mali', cursive;
+    /* Keep it consistent and cute */
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Mali', cursive;
+    /* Force Apply to All */
 }
 
 body {
