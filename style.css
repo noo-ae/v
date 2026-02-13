@@ -442,6 +442,13 @@ section {
     margin-bottom: 10px;
     z-index: 5;
     text-align: center;
+    transition: opacity 0.5s ease;
+    /* Smooth fade */
+}
+
+#love-letter h2.hidden {
+    opacity: 0;
+    /* Hide when letter opens */
 }
 
 .instruction {

@@ -66,7 +66,15 @@ updateTimer(); // Run once immediately
 // 4. Envelope Interaction
 function openEnvelope() {
     const envelope = document.querySelector('.envelope-wrapper');
+    const headerTitle = document.querySelector('#love-letter h2');
+
     envelope.classList.toggle('open');
+
+    if (envelope.classList.contains('open')) {
+        headerTitle.classList.add('hidden');
+    } else {
+        headerTitle.classList.remove('hidden');
+    }
 }
 
 // 5. Scroll Reveal Animation for Timeline
