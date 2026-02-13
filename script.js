@@ -129,3 +129,11 @@ style.innerHTML = `
 document.head.appendChild(style);
 
 setInterval(createHeart, 500);
+
+// Auto-focus on PIN input when page loads
+window.onload = function () {
+    const pinInput = document.getElementById('pin-input');
+    if (pinInput) {
+        pinInput.focus();
+    }
+};

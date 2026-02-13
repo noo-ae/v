@@ -545,23 +545,33 @@ section {
         height: 180px !important;
         /* Smaller than envelope (200px) */
         padding: 10px !important;
+        /* Reduced padding */
     }
 
     .envelope .letter h3 {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
+        /* Reduce header size */
         margin-bottom: 5px;
     }
 
     .envelope .letter p {
-        font-size: 0.9rem;
-        line-height: 1.3;
+        font-size: 0.8rem;
+        /* Smaller text for mobile fit */
+        line-height: 1.4;
     }
 
-    /* FIX: When open, allow it to grow */
+    .envelope .letter .signature {
+        font-size: 0.8rem;
+        margin-top: 10px;
+    }
+
+    /* FIX: When open, allow it to grow MUCH TALLER */
     .envelope-wrapper.open .letter {
-        height: 420px !important;
-        /* Taller when open */
+        height: 550px !important;
+        /* Much taller when open */
         bottom: 50px !important;
+        overflow-y: auto;
+        /* Add scroll if still too long */
     }
 }
 
