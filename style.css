@@ -364,24 +364,29 @@ section {
     opacity: 0;
 }
 
+
 .envelope-wrapper {
-    height: 200px;
-    width: 300px;
+    height: 250px;
+    /* Increased height */
+    width: 350px;
+    /* Increased width */
     background-color: var(--primary-color);
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    /* Add significant top margin so the letter doesn't hit the text */
-    margin-top: 150px;
+    /* Increased top margin to prevent overlapping text when letter pops up */
+    margin-top: 220px;
     margin-bottom: 50px;
 }
 
 .envelope {
     position: relative;
-    width: 300px;
-    height: 200px;
+    width: 350px;
+    /* Increased width */
+    height: 250px;
+    /* Increased height */
     background-color: #ff4d6d;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
@@ -391,9 +396,12 @@ section {
     position: absolute;
     top: 0;
     z-index: 2;
-    border-top: 110px solid #ff758f;
-    border-right: 150px solid transparent;
-    border-left: 150px solid transparent;
+    border-top: 140px solid #ff758f;
+    /* Adjusted flap height */
+    border-right: 175px solid transparent;
+    /* Half of width */
+    border-left: 175px solid transparent;
+    /* Half of width */
     transform-origin: top;
     transition: all 0.5s ease-in-out 0.7s;
 }
@@ -404,18 +412,23 @@ section {
     z-index: 2;
     width: 0;
     height: 0;
-    border-top: 100px solid transparent;
-    border-right: 150px solid #ff8fa3;
-    border-bottom: 100px solid #ff8fa3;
-    border-left: 150px solid #ff8fa3;
+    border-top: 125px solid transparent;
+    /* Half of height */
+    border-right: 175px solid #ff8fa3;
+    /* Half of width */
+    border-bottom: 125px solid #ff8fa3;
+    /* Half of height */
+    border-left: 175px solid #ff8fa3;
+    /* Half of width */
 }
 
 .envelope .letter {
     position: absolute;
     right: 20px;
     bottom: 0;
-    width: 260px;
-    height: 180px;
+    width: 310px;
+    /* Width - 40px padding */
+    height: 220px;
     background: #fff;
     text-align: center;
     transition: all 1s ease-in-out;
@@ -435,14 +448,16 @@ section {
 }
 
 .envelope .letter h3 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    /* Slightly larger text */
     margin-bottom: 10px;
 }
 
 .envelope .letter p {
-    font-size: 1rem;
+    font-size: 1.1rem;
+    /* Slightly larger text */
     /* Reduce line height slightly to fit */
-    line-height: 1.3;
+    line-height: 1.5;
     font-family: var(--font-body);
 }
 
@@ -456,11 +471,11 @@ section {
 }
 
 .envelope-wrapper.open .letter {
-    /* Pop up less drastically to avoid covering text */
+    /* Pop up adjustment */
     bottom: 50px;
-    transform: scale(1.05);
-    height: 320px;
-    /* Slightly shorter */
+    transform: scale(1.02);
+    height: 480px;
+    /* Much taller letter to fit text */
     z-index: 3;
     transition-delay: 0.5s;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);

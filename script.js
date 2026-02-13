@@ -1,6 +1,6 @@
 // 1. Set the date you started dating (Year, Month (0-11), Day)
 // Note: Month is 0-indexed (0 = Jan, 1 = Feb, etc.)
-const startDate = new Date(2023, 1, 14); // Feb 14, 2023
+const startDate = new Date(2025, 3, 28);
 
 function updateTimer() {
     const now = new Date();
