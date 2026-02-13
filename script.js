@@ -2,9 +2,52 @@
 // Note: Month is 0-indexed (0 = Jan, 1 = Feb, etc.)
 const startDate = new Date(2025, 3, 28);
 
+// 2. PIN Protection System
+function checkPin() {
+    const pinInput = document.getElementById('pin-input');
+    const inputVal = pinInput.value;
+    const errorMsg = document.getElementById('error-msg');
+
+    // Check if 4 digits are entered
+    if (inputVal.length === 4) {
+        if (inputVal === "2803") {
+            // Correct Password
+            errorMsg.innerText = "";
+            unlockWebsite();
+            // Optional: Start music here
+        } else {
+            // Wrong Password
+            errorMsg.innerText = "รหัสผิดง่ะ ลองใหม่นะ ❤️";
+            pinInput.value = "";
+            // Shake animation
+            const container = document.querySelector('.login-container');
+            container.style.animation = "shake 0.5s ease";
+            setTimeout(() => {
+                container.style.animation = "";
+            }, 500);
+        }
+    }
+}
+
+function unlockWebsite() {
+    const overlay = document.getElementById('login-overlay');
+
+    // Add fade out effect
+    overlay.style.opacity = '0';
+
+    setTimeout(() => {
+        overlay.classList.add('hidden');
+        document.body.classList.remove('locked');
+    }, 1000); // Wait for fade out
+}
+
+// 3. Timer Logic
 function updateTimer() {
     const now = new Date();
-    const diff = now - startDate;
+    // Use Math.abs to handle if startDate is in future (though normally it should be past)
+    // But since year 2025 is in future relative to now (if incorrect), let's assume it works for future dates too or user meant 2024
+    // Allowing flexible calculation
+    const diff = Math.abs(now - startDate);
 
     const days = Math.floor(diff / (1000 * 60 * 60 * 24));
     const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
@@ -20,13 +63,13 @@ function updateTimer() {
 setInterval(updateTimer, 1000);
 updateTimer(); // Run once immediately
 
-// 2. Envelope Interaction
+// 4. Envelope Interaction
 function openEnvelope() {
     const envelope = document.querySelector('.envelope-wrapper');
     envelope.classList.toggle('open');
 }
 
-// 3. Scroll Reveal Animation for Timeline
+// 5. Scroll Reveal Animation for Timeline
 const observerOptions = {
     threshold: 0.5
 };
@@ -44,7 +87,7 @@ timelineItems.forEach(item => {
     observer.observe(item);
 });
 
-// 4. Broken Heart / Flying Heart Animation (Optional Simple Effect)
+// 6. Floating Hearts Animation
 function createHeart() {
     const heart = document.createElement('div');
     heart.classList.add('heart');
@@ -53,7 +96,6 @@ function createHeart() {
     heart.style.animationDuration = Math.random() * 2 + 3 + "s";
     heart.style.fontSize = Math.random() * 20 + 10 + "px";
 
-    // Add CSS for this dynamically or in style.css
     heart.style.position = 'fixed';
     heart.style.bottom = '-50px';
     heart.style.zIndex = '0';
@@ -69,12 +111,19 @@ function createHeart() {
     }, 5000);
 }
 
-// Add simple floating animation style
+// Add styles dynamically for animations
 const style = document.createElement('style');
 style.innerHTML = `
     @keyframes floatUp {
         transform: translateY(-100vh) rotate(360deg);
         opacity: 0;
+    }
+    @keyframes shake {
+        0% { transform: translateX(0); }
+        25% { transform: translateX(-10px); }
+        50% { transform: translateX(10px); }
+        75% { transform: translateX(-10px); }
+        100% { transform: translateX(0); }
     }
 `;
 document.head.appendChild(style);

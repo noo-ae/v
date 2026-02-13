@@ -15,7 +15,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
-<body>
+<body class="locked"> <!-- Initially locked -->
+
+    <!-- Login Overlay -->
+    <div id="login-overlay">
+        <div class="login-container">
+            <h2>ใส่รหัสผ่านหัวใจ ❤️</h2>
+            <p>วันครบรอบของเราคือวันที่เท่าไหร่เอ่ย?</p>
+            <div class="pin-display">
+                <input type="password" id="pin-input" maxlength="4" placeholder="_ _ _ _" onkeyup="checkPin()">
+            </div>
+            <p id="error-msg"></p>
+        </div>
+    </div>
 
     <!-- Section 1: Hero / Intro -->
     <header id="hero">
@@ -75,12 +87,12 @@
             <div class="timeline-item left">
                 <div class="content">
                     <h3>จะจีบแล้วนะ</h3>
-                    <p class="date">21 มีนาคม025</p>
+                    <p class="date">21 มีนาคม 2025</p>
                     <p>ทั้งสัปดาห์คุยกันทุกวัน</p>
                 </div>
             </div>
 
-            <!-- Timeline Item X -->
+            <!-- Timeline Item 6 -->
             <div class="timeline-item right">
                 <div class="content">
                     <h3>ทริปอีสาน</h3>
@@ -89,7 +101,7 @@
                 </div>
             </div>
 
-            <!-- Timeline Item Y -->
+            <!-- Timeline Item 7 -->
             <div class="timeline-item left">
                 <div class="content">
                     <h3>ธรรมศาสตร์แฟร์</h3>
@@ -98,7 +110,7 @@
                 </div>
             </div>
 
-            <!-- Timeline Item X -->
+            <!-- Timeline Item 8 -->
             <div class="timeline-item right">
                 <div class="content">
                     <h3>เป็นแฟนกันนะ ^^</h3>
@@ -107,7 +119,7 @@
                 </div>
             </div>
 
-            <!-- Timeline Item Y -->
+            <!-- Timeline Item 9 -->
             <div class="timeline-item left">
                 <div class="content">
                     <h3>River city และงานหนังสือ</h3>
@@ -116,16 +128,16 @@
                 </div>
             </div>
 
-            <!-- Timeline Item X -->
+            <!-- Timeline Item 10 -->
             <div class="timeline-item right">
                 <div class="content">
                     <h3>งานหนังสือ</h3>
-                    <p class="date">7 เมษายน2025</p>
+                    <p class="date">7 เมษายน 2025</p>
                     <p>งานหนังสืออีกครั้ง ครั้งนี้เดินจับมือกันแน่นกว่าเดิมอีก จะไปวัดพระแก้วก็ปิด</p>
                 </div>
             </div>
 
-            <!-- Timeline Item Y -->
+            <!-- Timeline Item 11 -->
             <div class="timeline-item left">
                 <div class="content">
                     <h3>สามร้อยยอด</h3>
@@ -134,7 +146,7 @@
                 </div>
             </div>
 
-            <!-- Timeline Item X -->
+            <!-- Timeline Item 12 -->
             <div class="timeline-item right">
                 <div class="content">
                     <h3>วันสำคัญของเราทุกเดือน</h3>
@@ -172,7 +184,7 @@
 
     <!-- Section 4: The Envelope -->
     <section id="love-letter">
-        <h2>มีข้อความถึงจากแฟน...</h2>
+        <h2>มีข้อความจากแฟน...</h2>
         <p class="instruction">(กดที่ซองจดหมายเพื่อเปิดอ่าน)</p>
 
         <div class="envelope-wrapper" onclick="openEnvelope()">
