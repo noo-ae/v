@@ -425,15 +425,15 @@ section {
 /* Envelope Section */
 #love-letter {
     background-color: #fff;
-    /* min-height changed to auto to reduce empty space if not needed */
-    min-height: 80vh;
+    min-height: 100vh;
     perspective: 1000px;
-    /* Use flex to center vertically nicely */
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding-bottom: 50px;
-    /* Adjust bottom padding */
+    padding-left: 20px;
+    padding-right: 20px;
+    /* overflow: hidden; */
 }
 
 #love-letter h2 {
@@ -441,7 +441,7 @@ section {
     font-size: 3rem;
     margin-bottom: 10px;
     z-index: 5;
-    /* Ensure text stays somewhat visible/managed */
+    text-align: center;
 }
 
 .instruction {
@@ -449,36 +449,40 @@ section {
     color: #666;
     font-size: 0.9rem;
     transition: opacity 0.5s;
+    text-align: center;
 }
 
-/* Hide instruction when open (handled via JS toggling a class on section if preferred, 
-   but for now let's just make room) */
+/* Hide instruction when open */
 .envelope-wrapper.open~.instruction {
     opacity: 0;
 }
 
 .envelope-wrapper {
-    height: 250px;
+    height: 300px;
     /* Increased height */
-    width: 350px;
-    /* Increased width */
+    width: 600px;
+    /* Increased width significantly */
+    max-width: 90vw;
+    /* Responsive constraint */
     background-color: var(--primary-color);
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    /* Increased top margin to prevent overlapping text when letter pops up */
-    margin-top: 220px;
+    margin-top: 150px;
     margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .envelope {
     position: relative;
-    width: 350px;
-    /* Increased width */
-    height: 250px;
-    /* Increased height */
+    width: 600px;
+    /* Match wrapper */
+    height: 300px;
+    /* Match wrapper */
+    max-width: 100%;
     background-color: #ff4d6d;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
@@ -488,11 +492,11 @@ section {
     position: absolute;
     top: 0;
     z-index: 2;
-    border-top: 140px solid #ff758f;
+    border-top: 160px solid #ff758f;
     /* Adjusted flap height */
-    border-right: 175px solid transparent;
+    border-right: 300px solid transparent;
     /* Half of width */
-    border-left: 175px solid transparent;
+    border-left: 300px solid transparent;
     /* Half of width */
     transform-origin: top;
     transition: all 0.5s ease-in-out 0.7s;
@@ -504,28 +508,51 @@ section {
     z-index: 2;
     width: 0;
     height: 0;
-    border-top: 125px solid transparent;
+    border-top: 150px solid transparent;
     /* Half of height */
-    border-right: 175px solid #ff8fa3;
+    border-right: 300px solid #ff8fa3;
     /* Half of width */
-    border-bottom: 125px solid #ff8fa3;
+    border-bottom: 150px solid #ff8fa3;
     /* Half of height */
-    border-left: 175px solid #ff8fa3;
+    border-left: 300px solid #ff8fa3;
     /* Half of width */
+}
+
+/* Responsive triangle adjustments */
+@media screen and (max-width: 650px) {
+
+    .envelope-wrapper,
+    .envelope {
+        width: 320px;
+        height: 200px;
+    }
+
+    .envelope::before {
+        border-right: 160px solid transparent;
+        border-left: 160px solid transparent;
+        border-top: 110px solid #ff758f;
+    }
+
+    .envelope::after {
+        border-right: 160px solid #ff8fa3;
+        border-bottom: 100px solid #ff8fa3;
+        border-left: 160px solid #ff8fa3;
+        border-top: 100px solid transparent;
+    }
 }
 
 .envelope .letter {
     position: absolute;
-    right: 20px;
+    right: 5%;
+    left: 5%;
     bottom: 0;
-    width: 310px;
-    /* Width - 40px padding */
-    height: 220px;
+    width: 90%;
+    height: 280px;
     background: #fff;
     text-align: center;
     transition: all 1s ease-in-out;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    padding: 20px;
+    padding: 30px;
     z-index: 1;
     overflow: hidden;
     display: flex;
@@ -540,16 +567,15 @@ section {
 }
 
 .envelope .letter h3 {
-    font-size: 1.8rem;
-    /* Slightly larger text */
-    margin-bottom: 10px;
+    font-size: 2.2rem;
+    /* Larger text */
+    margin-bottom: 15px;
 }
 
 .envelope .letter p {
-    font-size: 1.1rem;
-    /* Slightly larger text */
-    /* Reduce line height slightly to fit */
-    line-height: 1.5;
+    font-size: 1.3rem;
+    /* Larger text */
+    line-height: 1.6;
     font-family: var(--font-body);
 }
 
@@ -566,10 +592,10 @@ section {
 
 .envelope-wrapper.open .letter {
     /* Pop up adjustment */
-    bottom: 50px;
+    bottom: 20px;
     transform: scale(1.02);
-    height: 480px;
-    /* Much taller letter to fit text */
+    height: 550px;
+    /* Much taller letter */
     z-index: 3;
     transition-delay: 0.5s;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
