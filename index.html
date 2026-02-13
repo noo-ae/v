@@ -4,8 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta tags to prevent caching -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
     <title>Happy Valentine's Day My Love</title>
-    <link rel="stylesheet" href="style.css">
+
+    <!-- Dynamic CSS Loading (Cache Busting) -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'style.css?v=' + new Date().getTime();
+        document.head.appendChild(link);
+    </script>
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -204,7 +216,6 @@
                         <p class="signature">รักมากที่สุดทุกวัน<br>บูม</p>
                     </div>
                 </div>
-                <!-- <div class="heart-seal">❤️</div> -->
             </div>
         </div>
     </section>
@@ -213,7 +224,12 @@
         <p>ทำด้วยใจ ❤️ ให้หนูเอ้</p>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Dynamic JS Loading (Cache Busting) -->
+    <script>
+        var script = document.createElement('script');
+        script.src = 'script.js?v=' + new Date().getTime();
+        document.body.appendChild(script);
+    </script>
 </body>
 
 </html>
